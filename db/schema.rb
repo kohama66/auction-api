@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_31_160540) do
+ActiveRecord::Schema.define(version: 2021_12_31_161401) do
 
   create_table "auctions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "event_date", null: false
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_12_31_160540) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "auction_id", null: false
+    t.index ["auction_id"], name: "index_products_on_auction_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -33,5 +35,6 @@ ActiveRecord::Schema.define(version: 2021_12_31_160540) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "products", "auctions"
   add_foreign_key "products", "users"
 end
