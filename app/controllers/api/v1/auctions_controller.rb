@@ -6,6 +6,6 @@ class Api::V1::AuctionsController < ApplicationController
 
   private
   def create_params
-    params.require(:auction).permit(:event_date)
+    params.require(:auction).permit(:event_date, :count)
   end
 end
