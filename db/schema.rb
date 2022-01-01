@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_01_052302) do
+ActiveRecord::Schema.define(version: 2022_01_01_054637) do
 
   create_table "auctions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "event_date", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_01_01_052302) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "auction_id", null: false
+    t.text "description"
     t.index ["auction_id"], name: "index_products_on_auction_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end

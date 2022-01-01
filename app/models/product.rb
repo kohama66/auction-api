@@ -2,13 +2,14 @@
 #
 # Table name: products
 #
-#  id         :bigint           not null, primary key
-#  min_price  :integer          default(0), not null
-#  name       :string(255)      not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  auction_id :bigint           not null
-#  user_id    :bigint
+#  id          :bigint           not null, primary key
+#  description :text(65535)
+#  min_price   :integer          default(0), not null
+#  name        :string(255)      not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  auction_id  :bigint           not null
+#  user_id     :bigint
 #
 # Indexes
 #

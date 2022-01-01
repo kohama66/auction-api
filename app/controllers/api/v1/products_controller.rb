@@ -7,6 +7,6 @@ class Api::V1::ProductsController < ApplicationController
 
   private
   def create_params
-    params.require(:product).permit(:name, :min_price, :auction_id)
+    params.require(:product).permit(:name, :min_price, :auction_id, :description)
   end
 end
