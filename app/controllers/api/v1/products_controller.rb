@@ -1,4 +1,9 @@
 class Api::V1::ProductsController < ApplicationController
+  def index
+    products = Product.where(auction_id: params[:auction_id])
+    render json: products
+  end
+
   def create
     product = Product.new(create_params)
     product.user_id = 1 ## 仮
