@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: auction
+  version: "1.0"
+servers:
+  - url: "http://localhost:3000/api/v1"
+paths:
+  "/auctions/{id}/products":
+    get:
+      summary: オークションIDに基づく商品一覧取得
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+      operationId: get-auctions-id-products
+      parameters:
+        - schema:
+            type: integer
+          name: id
+          in: path
+          required: true
+components:
+  schemas:
+    Auction:
+      title: Auction
+      type: object
+      x-examples:
+        example-1:
+          id: 0
+      properties:
+        id:
+          type: integer
+        event_date:
+          type: string
+        count:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      required:
+        - id
+        - event_date
+        - count
+        - created_at
+        - updated_at
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        min_price:
+          type: integer
+        description:
+          type: string
+        user_id:
+          type: integer
+        auction_id:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      required:
+        - id
+        - name
+        - min_price
+        - user_id
+        - auction_id
+        - created_at
+        - updated_at
