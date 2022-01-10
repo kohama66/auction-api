@@ -60,24 +60,12 @@ components:
           type: integer
         description:
           type: string
-        user_id:
-          type: integer
-        auction_id:
-          type: integer
-        created_at:
-          type: string
-        updated_at:
-          type: string
         user:
           $ref: "#/components/schemas/User"
       required:
         - id
         - name
         - min_price
-        - user_id
-        - auction_id
-        - created_at
-        - updated_at
         - user
     User:
       title: User
