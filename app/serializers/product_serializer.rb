@@ -21,6 +21,7 @@
 #  fk_rails_...  (auction_id => auctions.id)
 #  fk_rails_...  (user_id => users.id)
 #
-class Product < ApplicationRecord
-  belongs_to :user
+class ProductSerializer < ActiveModel::Serializer
+  attributes :id, :name, :description, :min_price
+  attribute :user
 end
