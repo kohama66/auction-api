@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < ApplicationController
   def index
-    products = Product.where(auction_id: params[:auction_id])
+    products = Product.includes(:user).where(auction_id: params[:auction_id])
     render json: products
   end
 
